@@ -148,19 +148,6 @@ const MenuLinks = ({ isOpen }) => {
                 <MenuItem to="/pricing">Face</MenuItem>
                 <MenuItem to="/pricing">Body</MenuItem>
                 <MenuItem to="/pricing">Men's</MenuItem>
-                {/* <MenuItem to="/signup" isLast>
-                    <Button
-                        size="sm"
-                        rounded="md"
-                        color={["primary.500", "primary.500", "white", "white"]}
-                        bg={["white", "white", "primary.500", "primary.500"]}
-                        _hover={{
-                            bg: ["primary.100", "primary.100", "primary.600", "primary.600"]
-                        }}
-                    >
-                        Create Account
-          </Button>
-                </MenuItem> */}
             </Stack>
         </Box>
     );
