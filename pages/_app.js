@@ -8,7 +8,10 @@ import theme from '../styles/theme';
 function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider theme={theme}>
-      <Navbar><Component {...pageProps} /> </Navbar>
+      <div className='background'>
+        <Navbar />
+        <Component {...pageProps} />
+      </div>
 
     </ChakraProvider>
   )

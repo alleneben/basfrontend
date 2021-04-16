@@ -1,12 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap");
 html,
 body {
+  min-height: 100%;
   padding: 0;
   margin: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Roboto', sans-serif;
   /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
+  background: white;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: "14px";
+  line-height: 1.4;
 }
 
 a {
@@ -14,18 +19,22 @@ a {
   text-decoration: none;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
+
+
 .slideUpBtn {
-  padding: 12px 24px;
+  padding: 10px 20px;
   background-color: transparent;
   border: 2px solid hsl(243, 80%, 62%);
   border-radius: 6px;
   position: relative;
   overflow: hidden;
-  transition: all 0.5s cubic-bezier(1,.15,.34,.92)
+  transition: all 0.5s cubic-bezier(1, 0.15, 0.34, 0.92);
 }
 
 .slideUpBtn span {
@@ -36,12 +45,12 @@ a {
 
 .slideUpBtn:hover span {
   opacity: 0;
-  transform: translateY(-100%)
+  transform: translateY(-100%);
 }
 
 .slideUpBtn::before {
   content: "";
-  background-color: hsl(243, 80%, 62%);;
+  background-color: hsl(243, 80%, 62%);
   height: 100%;
   left: 0;
   position: absolute;
@@ -49,11 +58,11 @@ a {
   transform: translateY(100%);
   transition: inherit;
   width: 100%;
-  transition: transform 0.5s cubic-bezier(1,.15,.34,.92)
+  transition: transform 0.5s cubic-bezier(1, 0.15, 0.34, 0.92);
 }
 
 .slideUpBtn::after {
-  content: 'SignUp';
+  content: "SignUp";
   align-items: center;
   display: flex;
   height: 100%;
@@ -64,12 +73,11 @@ a {
   transition: inherit;
   transform: translateY(100%);
   width: 100%;
-
 }
 
 .slideUpBtn:hover::before {
   transform: translateY(0) scale(3);
-  transition-delay: .025s;
+  transition-delay: 0.025s;
 }
 
 .slideUpBtn:hover::after {
@@ -85,7 +93,7 @@ a {
 }
 
 .borderFade::after {
-  content: '';
+  content: "";
   position: absolute;
   height: 2px;
   width: 100%;
@@ -100,4 +108,59 @@ a {
 .borderFade:hover::after {
   opacity: 1;
   transform: translateY(0);
+}
+
+.borderLeftRight {
+  display: inline-block;
+  position: relative;
+  color: hsl(222, 25%, 14%);
+}
+
+.borderLeftRight::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: pink;
+  transform-origin: bottom right;
+  transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.borderLeftRight:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.element {
+  width: 40%;
+  position: relative;
+  height: 700px;
+  float: left;
+  background-image: url("/banner.jpeg");
+  background-size: cover;
+  background-position: -100px 0;
+  background-repeat: no-repeat;
+  -webkit-clip-path: ellipse(70% 70% at 90% 50%);
+  clip-path: ellipse(70% 70% at 90% 50%);
+  -webkit-shape-outside: ellipse(70% 70% at 90% 50%);
+  shape-outside: ellipse(70% 70% at 90% 50%);
+  -webkit-shape-margin: 2em;
+  shape-margin: 2em;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto;
+  background-color: white;
+}
+button{
+  outline: none;
+}
+
+.background{
+  background-image: url('/background.svg');
 }

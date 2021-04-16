@@ -5,10 +5,10 @@ import {
   FaInstagram,
   FaLinkedinIn,
   FaPinterest,
-  FaShoppingCart,
   FaYoutube,
 } from 'react-icons/fa';
 import { FcPhone } from 'react-icons/fc';
+import { FiShoppingCart } from 'react-icons/fi';
 
 import {
   Box,
@@ -27,8 +27,7 @@ const NavBar = (props) => {
     const toggle = () => setIsOpen(!isOpen);
 
     return (
-        <>
-
+        <div className='nav'>
             <UpperSection />
             <NavBarContainer {...props}>
                 <Logo
@@ -39,9 +38,8 @@ const NavBar = (props) => {
                 <MenuLinks isOpen={isOpen} />
                 <MenuLast />
             </NavBarContainer>
-
             {props.children}
-        </>
+        </div>
     );
 };
 
@@ -79,7 +77,7 @@ const MenuLast = () => {
             pt={[4, 4, 0, 0]}>
             <MenuItem to="/" className='borderFade'>Login</MenuItem>
             <MenuItem to="/how" className='slideUpBtn'>SignUp</MenuItem>
-            <FaShoppingCart />
+            <FiShoppingCart />
         </Stack>
     )
 }
@@ -116,9 +114,12 @@ const MenuToggle = ({ toggle, isOpen }) => {
 
 const MenuItem = ({ children, isLast, to = "/", ...rest }) => {
     return (
-        <Link href={to} _hover={{
-            color: 'pink',
-        }}>
+        <Link
+        outlineColor='none'
+            outline='none'
+            href={to} _hover={{
+                color: 'pink',
+            }}>
             <Text display="block" {...rest} fontWeight='normal' fontSize='18px' color='black' _hover={{
                 color: 'pink',
 
@@ -142,12 +143,12 @@ const MenuLinks = ({ isOpen }) => {
                 direction={["column", "row", "row", "row"]}
                 pt={[4, 4, 0, 0]}
             >
-                <MenuItem to="/">Hair</MenuItem>
-                <MenuItem to="/how">Massage </MenuItem>
-                <MenuItem to="/faetures">Nails</MenuItem>
-                <MenuItem to="/pricing">Face</MenuItem>
-                <MenuItem to="/pricing">Body</MenuItem>
-                <MenuItem to="/pricing">Men's</MenuItem>
+                <MenuItem to="/" className='borderLeftRight'>Hair</MenuItem>
+                <MenuItem to="/how" className='borderLeftRight'>Massage </MenuItem>
+                <MenuItem to="/faetures" className='borderLeftRight'>Nails</MenuItem>
+                <MenuItem to="/pricing" className='borderLeftRight'>Face</MenuItem>
+                <MenuItem to="/pricing" className='borderLeftRight'>Body</MenuItem>
+                <MenuItem to="/pricing" className='borderLeftRight'>Men's</MenuItem>
             </Stack>
         </Box>
     );
@@ -161,6 +162,7 @@ const NavBarContainer = ({ children, ...props }) => {
             justify="space-around"
             wrap="wrap"
             w="100%"
+            h={20}
             mb={2}
             p={3}
             bg={["red", "primary.500", "transparent", "transparent"]}
