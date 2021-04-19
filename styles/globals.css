@@ -164,3 +164,7 @@ button{
 .background{
   background-image: url('/background.svg');
 }
+
+Link{
+  outline: none;
+}

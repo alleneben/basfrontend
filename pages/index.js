@@ -2,6 +2,7 @@
 import Head from 'next/head';
 
 import Banner from '../components/Banner';
+import Basfooter from '../components/footer';
 
 // Home function which is task to view the create page
 export default function Home() {
@@ -19,6 +20,10 @@ export default function Home() {
       <main color='black'>
        <Banner/>
       </main>
+
+      <footer>
+        <Basfooter/>
+      </footer>
     </div>
   )
 }
