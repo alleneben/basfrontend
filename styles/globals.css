@@ -157,9 +157,11 @@ a {
   margin: 20px auto;
   background-color: white;
 }
+s
 button{
   outline: none;
 }
+
 
 .background{
   background-image: url('/background.svg');
@@ -167,4 +169,8 @@ button{
 
 Link{
   outline: none;
+}
+
+.how{
+  background-image: url('/fiv.svg');
 }

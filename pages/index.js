@@ -1,8 +1,13 @@
 // Main View
 import Head from 'next/head';
 
+import AreaStylistSection from '../components/AreaStylistSection';
 import Banner from '../components/Banner';
 import Basfooter from '../components/footer';
+import Navbar from '../components/Header';
+import HowItWorks from '../components/Howitworks';
+import Sponsor from '../components/sponsor';
+import Testimonial from '../components/testimonal';
 
 // Home function which is task to view the create page
 export default function Home() {
@@ -18,11 +23,19 @@ export default function Home() {
       </Head>
 
       <main color='black'>
-       <Banner/>
+        <div class="background">
+          <Navbar />
+          <Banner />
+        </div>
+        <Sponsor />
+       <AreaStylistSection/>
+       <HowItWorks/>
+       <AreaStylistSection/>
+       <Testimonial />
       </main>
 
       <footer>
-        <Basfooter/>
+        <Basfooter />
       </footer>
     </div>
   )
