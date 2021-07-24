@@ -1,13 +1,8 @@
 // Main View
 import Head from 'next/head';
 
-import AreaStylistSection from '../components/AreaStylistSection';
-import Banner from '../components/Banner';
 import Basfooter from '../components/footer';
-import Navbar from '../components/Header';
-import HowItWorks from '../components/Howitworks';
-import Sponsor from '../components/sponsor';
-import Testimonial from '../components/testimonal';
+import MenuWrapper from '../components/menu/menu_wrapper';
 
 // Home function which is task to view the create page
 export default function Home() {
@@ -21,20 +16,16 @@ export default function Home() {
         <title>BasFrontEnd</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <header className="menu">
 
-      <main color='black'>
-        <div class="background">
-          <Navbar />
-          <Banner />
-        </div>
-        <Sponsor />
-       <AreaStylistSection/>
-       <HowItWorks/>
-       <AreaStylistSection/>
-       <Testimonial />
+      </header>
+
+
+      <main className="main__body" color='black' >
+        <MenuWrapper/>
       </main>
 
-      <footer>
+      <footer className="main__footer">
         <Basfooter />
       </footer>
     </div>

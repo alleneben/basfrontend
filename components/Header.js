@@ -1,4 +1,7 @@
-import React from 'react';
+import {
+  useContext,
+  useState,
+} from 'react';
 
 import {
   FaFacebookF,
@@ -8,7 +11,7 @@ import {
   FaYoutube,
 } from 'react-icons/fa';
 import { FcPhone } from 'react-icons/fc';
-import { FiShoppingCart } from 'react-icons/fi';
+import { RiMenu3Fill } from 'react-icons/ri';
 
 import {
   Box,
@@ -20,18 +23,19 @@ import {
 } from '@chakra-ui/react';
 
 import Logo from './BrandLogo';
+import { menuContext } from './menu/menu_context';
 
 const NavBar = (props) => {
-    const [isOpen, setIsOpen] = React.useState(false);
-
+    const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
 
     return (
+
         <div className='nav'>
             <UpperSection />
             <NavBarContainer {...props}>
                 <Logo
-                    w="100px"
+                    w="100px "
                     color={["white", "white", "primary.500", "primary.500"]}
                 />
                 <MenuToggle toggle={toggle} isOpen={isOpen} />
@@ -40,6 +44,7 @@ const NavBar = (props) => {
             </NavBarContainer>
             {props.children}
         </div>
+
     );
 };
 
@@ -52,7 +57,7 @@ const UpperSection = () => {
                     <FcPhone />
                     <Text fontSize="sm" color="pink.500">
                         +3(800) 2345-37747
-                </Text>
+                    </Text>
                     <Text fontSize="sm">Days a week from 9:00 am to 7:00 pm</Text>
                 </HStack>
 
@@ -69,6 +74,20 @@ const UpperSection = () => {
 }
 
 const MenuLast = () => {
+    const { menuState, setMenuState } = useContext(menuContext)
+
+    // useEffect(() => {
+    //     // If the menu is open and we click the menu button to close it.
+    //     if (menuState === true) {
+    //         console.log(menuState)
+    //         handleEntranceAnimation().play();
+    //     } else if (
+    //         menuState === true ||
+    //         (menuState === true && menuState === null)
+    //     ) {
+
+    //     }
+    // }, [menuState]);
     return (
         <Stack spacing={8}
             align="center"
@@ -77,7 +96,7 @@ const MenuLast = () => {
             pt={[4, 4, 0, 0]}>
             <MenuItem to="/" className='borderFade'>Login</MenuItem>
             <MenuItem to="/how" className='slideUpBtn'>SignUp</MenuItem>
-            <FiShoppingCart />
+            <RiMenu3Fill cursor='pointer' onClick={() => setMenuState(!menuState)} />
         </Stack>
     )
 }
@@ -115,7 +134,7 @@ const MenuToggle = ({ toggle, isOpen }) => {
 const MenuItem = ({ children, isLast, to = "/", ...rest }) => {
     return (
         <Link
-        outlineColor='none'
+            outlineColor='none'
             outline='none'
             href={to} _hover={{
                 color: 'pink',
