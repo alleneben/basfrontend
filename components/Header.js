@@ -5,12 +5,12 @@ import {
 
 import {
   FaFacebookF,
+  FaFacebookMessenger,
   FaInstagram,
   FaLinkedinIn,
   FaPinterest,
   FaYoutube,
 } from 'react-icons/fa';
-import { FcPhone } from 'react-icons/fc';
 import { RiMenu3Fill } from 'react-icons/ri';
 
 import {
@@ -54,9 +54,9 @@ const UpperSection = () => {
         <Box bg="black" w="100%" p={3} color="white">
             <HStack justifyContent="space-around" >
                 <HStack>
-                    <FcPhone />
+                    <FaFacebookMessenger />
                     <Text fontSize="sm" color="pink.500">
-                        +3(800) 2345-37747
+                        admin@stylist
                     </Text>
                     <Text fontSize="sm">Days a week from 9:00 am to 7:00 pm</Text>
                 </HStack>

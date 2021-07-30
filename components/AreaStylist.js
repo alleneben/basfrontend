@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Link from 'next/link';
 import { BsFillBriefcaseFill } from 'react-icons/bs';
 import {
   MdEmail,
@@ -17,6 +18,7 @@ import {
 
 const AreaStylist = () => {
   return (
+    <Link href='/detail' >
     <Flex
       bg={useColorModeValue("#F9FAFB", "gray.600")}
       p={2}
@@ -43,10 +45,11 @@ const AreaStylist = () => {
 
         <Flex alignItems="center" px={6} py={3} bg="gray.900">
           <Icon h={6} w={6} color="white" />
-
-          <chakra.h1 mx={3} color="white" fontWeight="bold" fontSize="lg">
-            Hair Stylist
-          </chakra.h1>
+         
+            <chakra.h1 mx={3} color="white" fontWeight="bold" fontSize="lg">
+              Hair Stylist
+            </chakra.h1>
+     
         </Flex>
 
         <Box py={4} px={6}>
@@ -105,6 +108,7 @@ const AreaStylist = () => {
         </Box>
       </Box>
     </Flex>
+    </Link>
   );
 };
 

@@ -28,26 +28,26 @@ const HomeTest = () => {
             <div className='menu__close__div' onClick={() => setMenuState(!menuState)}>
                 <CgClose size={30} className="menu__close" color="black" />
             </div>
-            <ul class="menu_list">
-                <li class="menu_list_item">
-                    <a href="#" class="menu_list_link">Home</a>
+            <ul className="menu_list">
+                <li className="menu_list_item">
+                    <a href="#" className="menu_list_link">Home</a>
                 </li>
-                <li class="menu_list_item">
-                    <a href="#" class="menu_list_link">About</a>
+                <li className="menu_list_item">
+                    <a href="#" className="menu_list_link">About</a>
                 </li>
-                <li class="menu_list_item">
-                    <a href="#" class="menu_list_link">Help</a>
+                <li className="menu_list_item">
+                    <a href="#" className="menu_list_link">Help</a>
                 </li>
-                <li class="menu_list_item">
-                    <a href="#" class="menu_list_link">Contact</a>
+                <li className="menu_list_item">
+                    <a href="#" className="menu_list_link">Contact</a>
                 </li>
             </ul>
             <div>
-                <button class="menu_trigger btnOpenMenu">HAIRCUT</button>
-                <button class="menu_trigger btnOpenMenu">NAIL</button>
-                <button class="menu_trigger btnOpenMenu">EYELASHES</button>
-                <button class="menu_trigger btnOpenMenu">FACIAL</button>
-                <button class="menu_trigger btnOpenMenu">WEAVES</button>
+                <button className="menu_trigger btnOpenMenu">HAIRCUT</button>
+                <button className="menu_trigger btnOpenMenu">NAIL</button>
+                <button className="menu_trigger btnOpenMenu">EYELASHES</button>
+                <button className="menu_trigger btnOpenMenu">FACIAL</button>
+                <button className="menu_trigger btnOpenMenu">WEAVES</button>
             </div>
         </div >
     )

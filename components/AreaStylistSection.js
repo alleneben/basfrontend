@@ -32,7 +32,6 @@ const AreaStylistSection = () => {
                 alignItems="center"
                 justifyContent="space-between"
             >
-
                 <AreaStylist />
                 <AreaStylist />
                 <AreaStylist />
